@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import WorkoutCatalog from './components/WorkoutCatalog';
+import WorkoutDetails from './components/WorkoutDetails';
+import CreateWorkout from './components/CreateWorkout';
+import EditWorkout from './components/EditWorkout';
+import DeleteWorkout from './components/DeleteWorkout';
+import Dashboard from './pages/Dashboard';
+import Profile from './pages/Profile';
+import PrivateRoute from './components/PrivateRoute';
+import PublicRoute from './components/PublicRoute';
+import Navigation from './components/Navigation';
+import { AuthProvider } from './contexts/AuthContext';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <AuthProvider>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/workouts" element={<WorkoutCatalog />} />
+        <Route path="/workouts/:id" element={<WorkoutDetails />} />
+        <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
+        <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
+        <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+        <Route path="/create-workout" element={<PrivateRoute><CreateWorkout /></PrivateRoute>} />
+        <Route path="/edit-workout/:id" element={<PrivateRoute><EditWorkout /></PrivateRoute>} />
+        <Route path="/delete-workout/:id" element={<PrivateRoute><DeleteWorkout /></PrivateRoute>} />
+        <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </AuthProvider>
+  );
 }
-
-export default App
