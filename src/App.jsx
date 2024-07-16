@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -15,23 +14,27 @@ import PublicRoute from './components/PublicRoute';
 import Navigation from './components/Navigation';
 import { AuthProvider } from './contexts/AuthContext';
 
-export default function App() {
+function App() {
   return (
-    <AuthProvider>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/workouts" element={<WorkoutCatalog />} />
-        <Route path="/workouts/:id" element={<WorkoutDetails />} />
-        <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
-        <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
-        <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-        <Route path="/create-workout" element={<PrivateRoute><CreateWorkout /></PrivateRoute>} />
-        <Route path="/edit-workout/:id" element={<PrivateRoute><EditWorkout /></PrivateRoute>} />
-        <Route path="/delete-workout/:id" element={<PrivateRoute><DeleteWorkout /></PrivateRoute>} />
-        <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </AuthProvider>
+    <div className="main">
+      <AuthProvider>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/workouts" element={<WorkoutCatalog />} />
+          <Route path="/workouts/:id" element={<WorkoutDetails />} />
+          <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
+          <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
+          <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+          <Route path="/create-workout" element={<PrivateRoute><CreateWorkout /></PrivateRoute>} />
+          <Route path="/edit-workout/:id" element={<PrivateRoute><EditWorkout /></PrivateRoute>} />
+          <Route path="/delete-workout/:id" element={<PrivateRoute><DeleteWorkout /></PrivateRoute>} />
+          <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </AuthProvider>
+    </div>
   );
 }
+
+export default App
