@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { firestore } from '../firebase';
 
 export default function WorkoutCatalog() {
   const [workouts, setWorkouts] = useState([]);

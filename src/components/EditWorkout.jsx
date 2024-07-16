@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { firestore } from '../firebase';
 
 export default function EditWorkout() {
   const { id } = useParams();

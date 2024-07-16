@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { firestore } from '../firebase';
 
 export default function CreateWorkout() {
   const titleRef = useRef();

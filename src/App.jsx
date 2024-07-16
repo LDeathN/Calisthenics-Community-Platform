@@ -12,13 +12,12 @@ import Profile from './pages/Profile';
 import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
 import Navigation from './components/Navigation';
-import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
   return (
     <div className="main">
-      <AuthProvider>
         <Navigation />
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/workouts" element={<WorkoutCatalog />} />
@@ -30,9 +29,8 @@ function App() {
           <Route path="/edit-workout/:id" element={<PrivateRoute><EditWorkout /></PrivateRoute>} />
           <Route path="/delete-workout/:id" element={<PrivateRoute><DeleteWorkout /></PrivateRoute>} />
           <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
-      </AuthProvider>
     </div>
   );
 }
