@@ -23,8 +23,7 @@ function Navbar() {
                     </Link>
                 </div> 
                 <div className='nav-btn'>
-                    <div to="/sign-in" className='nav-btn-link'>Sign In</div>
-                    <div to="/sign-up" className='nav-btn-link'>Register</div>
+                    <Link to="/login-register" className='nav-btn-link'>Login/Register</Link>
                 </div>
             </div>
         </div>
