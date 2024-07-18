@@ -1,0 +1,57 @@
+@import url('../App.css');
+
+.footer {
+    padding: 5rem calc((100vw - 1100px) / 2);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    color: var(--white);
+    background: var(--black);
+}
+
+.footer-desc {
+    padding: 0 2rem;
+}
+
+.footer-desc h1 {
+    margin-bottom: 2rem;
+    color: var(--red);
+    font-size: 1.5rem;
+}
+
+.footer-desc p {
+    margin-bottom: 1rem;
+}
+
+#phone {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+}
+
+.footer-title {
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: rgb(242, 242, 242);
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+    transition: 0.3s ease-in-out;
+}
+
+.footer-link:hover {
+    color: var(--red);
+}
