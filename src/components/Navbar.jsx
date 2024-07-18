@@ -15,8 +15,8 @@ function Navbar() {
                     <Link to="/services" className="nav-link">
                     Services
                     </Link>
-                    <Link to="/plans" className="nav-link">
-                    Plans
+                    <Link to="/memberships" className="nav-link">
+                    Memberships
                     </Link>
                     <Link to="/coaches" className="nav-link">
                     Coaches

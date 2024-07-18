@@ -1,0 +1,75 @@
+@import url('../App.css');
+
+.memberships {
+    background: var(--black);
+    height: 100vh;
+    width: 100%;
+    color: var(--white);
+    padding: 6rem calc((100vw - 1000) / 2);
+    text-align: center;
+}
+
+.memberships h1 {
+    margin-bottom: 1rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+    padding: 0 1rem;
+}
+
+.membership-desc {
+    margin-bottom: 3rem;
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    padding: 1rem;
+}
+
+.membership-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.membership-card {
+    padding: 2rem;
+    min-height: 450px;
+    width: 325px;
+    background: var(--white);
+    color: var(--black);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.membership-perks {
+    min-height: 150px;
+}
+
+.membership-perk {
+    display: flex;
+    justify-content: center;
+}
+
+.membership-card p {
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+
+.bolded {
+    font-weight: bold;
+}
+
+.icon {
+   font-size: 3rem;
+   margin-bottom: 2rem;
+   color: var(--red); 
+}
+
+.check {
+    margin-right: 0.5rem;
+    color: var(--red);
+}
+
+.membership-card h3 {
+    font-size: clamp(1rem, 5vw, 2rem);
+    margin-bottom: 2rem;
+}
