@@ -1,3 +1,9 @@
+:root {
+    --red: #f9032f;
+    --black: #000;
+    --white: #fff;
+}
+
 * {
     font-family: 'Sora', sans-serif;
     box-sizing: border-box;
@@ -10,7 +16,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('./images/LoginRegister.jpg') no-repeat;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url('./images/background.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 }
