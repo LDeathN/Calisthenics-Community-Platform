@@ -16,6 +16,9 @@ function ProfileDetails() {
                         <div className='input-box'>
                             <input type='text' placeholder='Last Name' disabled/>
                         </div>
+                        <div className='input-box'>
+                            <input type='number' placeholder='Posts: 0' disabled/>
+                        </div>
                     </div> 
                 </div>
                 <div className='input-box'>
