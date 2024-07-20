@@ -9,6 +9,7 @@ import Coaches from './pages/Coaches';
 import ContactUs from './pages/ContactUs';
 import Footer from './pages/Footer';
 import LoginRegister from './pages/LoginRegister';
+import ProfileDetails from './pages/ProfileDetails';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='/coaches' Component={Coaches} />
           <Route path='/contact-us' Component={ContactUs} />
           <Route className='login-register-section' path='/login-register' Component={LoginRegister} />
+          <Route path='/profile-details' Component={ProfileDetails} />
         </Routes>
       </div> 
       

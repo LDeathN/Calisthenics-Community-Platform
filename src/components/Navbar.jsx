@@ -24,6 +24,9 @@ function Navbar() {
                     <Link to="/contact-us" className="nav-link">
                     Contact Us
                     </Link>
+                    <Link to="/profile-details" className="nav-link">
+                    Profile
+                    </Link>
                 </div> 
                 <div className='nav-btn'>
                     <Link to="/login-register" className='nav-btn-link'>Login/Register</Link>
