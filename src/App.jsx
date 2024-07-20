@@ -7,9 +7,10 @@ import Services from './pages/Services';
 import Membership from './pages/Membership';
 import Coaches from './pages/Coaches';
 import ContactUs from './pages/ContactUs';
-import Footer from './pages/Footer';
+import Footer from './components/Footer';
 import LoginRegister from './pages/LoginRegister';
 import ProfileDetails from './pages/ProfileDetails';
+import PostCreate from './pages/PostCreate';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='/contact-us' Component={ContactUs} />
           <Route className='login-register-section' path='/login-register' Component={LoginRegister} />
           <Route path='/profile-details' Component={ProfileDetails} />
+          <Route path='/post-create' Component={PostCreate} />
         </Routes>
       </div> 
       

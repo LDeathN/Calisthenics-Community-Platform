@@ -1,9 +1,9 @@
 @import url('../App.css');
 
-.wrapper-profile {
+.wrapper-post {
     position: relative;
-    width: 500px;
-    height: 650px;
+    width: 475px;
+    height: 575px;
     background-color: transparent;
     border: 2px solid rgba(255, 255, 255, .1);
     backdrop-filter: blur(30px);
@@ -16,17 +16,7 @@
     transition: height .2s ease;
 }
 
-.profile-box {
-    display: flex;
-}
-
-.profile-img {
-    width: 200px;
-    height: 200px;
-    margin-right: 0.5rem;
-}
-
-.wrapper-profile .form-box-profile {
+.wrapper-post .form-box-post {
     width: 100%;
     padding: 40px;
 }

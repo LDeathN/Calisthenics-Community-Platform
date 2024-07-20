@@ -27,6 +27,12 @@ function Navbar() {
                     <Link to="/profile-details" className="nav-link">
                     Profile
                     </Link>
+                    <Link to="/post-create" className="nav-link">
+                    Create Post
+                    </Link>
+                    <Link to="/post-details" className="nav-link">
+                    View Post
+                    </Link>
                 </div> 
                 <div className='nav-btn'>
                     <Link to="/login-register" className='nav-btn-link'>Login/Register</Link>

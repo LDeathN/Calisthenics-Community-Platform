@@ -3,8 +3,8 @@ import './ProfileDetails.css'
 
 function ProfileDetails() {
   return (
-    <div className='wrapper'>
-        <div className='form-box'>
+    <div className='wrapper-profile'>
+        <div className='form-box-profile'>
             <form action="">
                 <h1>Profile Page</h1>
                 <div className='profile-box'>
