@@ -12,17 +12,17 @@
 - [x] Add routes in App.jsx
 - [x] Add links in the navigation
 ## 3. Create Service Layer
-- [] Service layer architecture disccusion
-- [] Abstract requester
-- [] Add games api
+- [x] Service layer architecture disccusion
+- [x] Abstract requester
+- [x] Add posts api
 - [] Preseed practice server
 ## 4. Page Implementations
-- [] Game list
+- [] Post list
 - [] Details
   - [] Details link
   - [] Details route
   - [] Api function - getOne
-- [] Home - Latest Games
+- [] Home - Latest Posts
 ## 5. Comments (Advanced)
 - [] Create service for nested resource `comments`
 - [] Post comment to server
