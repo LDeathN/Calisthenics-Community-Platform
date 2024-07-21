@@ -12,23 +12,14 @@ function Navbar() {
             </Link>
             <div className='nav-main'>
                 <div className='nav-menu'>
-                    <Link to="/services" className="nav-link">
-                    Services
-                    </Link>
-                    <Link to="/memberships" className="nav-link">
-                    Memberships
-                    </Link>
-                    <Link to="/coaches" className="nav-link">
-                    Coaches
-                    </Link>
-                    <Link to="/contact-us" className="nav-link">
-                    Contact Us
-                    </Link>
                     <Link to="/profile-details" className="nav-link">
                     Profile
                     </Link>
                     <Link to="/post-create" className="nav-link">
                     Create Post
+                    </Link>
+                    <Link to="/catalog" className="nav-link">
+                    Catalog
                     </Link>
                     <Link to="/post-details" className="nav-link">
                     View Post
