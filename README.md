@@ -15,14 +15,14 @@
 - [x] Service layer architecture disccusion
 - [x] Abstract requester
 - [x] Add posts api
-- [] Preseed practice server
+- [x] Preseed practice server
 ## 4. Page Implementations
-- [] Post list
-- [] Details
-  - [] Details link
-  - [] Details route
-  - [] Api function - getOne
-- [] Home - Latest Posts
+- [x] Post list
+- [x] Details
+  - [x] Details link
+  - [x] Details route
+  - [x] Api function - getOne
+- [x] Home - Latest Posts
 ## 5. Comments (Advanced)
 - [] Create service for nested resource `comments`
 - [] Post comment to server

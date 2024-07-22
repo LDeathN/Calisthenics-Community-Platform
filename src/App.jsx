@@ -22,7 +22,7 @@ function App() {
           <Route className='login-register-section' path='/login-register' Component={LoginRegister} />
           <Route path='/profile-details' Component={ProfileDetails} />
           <Route path='/post-create' Component={PostCreate} />
-          <Route path='/post-details' Component={PostDetails} />
+          <Route path='/posts/:postId/details' Component={PostDetails} />
         </Routes>
       </div> 
       

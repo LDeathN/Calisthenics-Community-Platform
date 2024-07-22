@@ -21,9 +21,6 @@ function Navbar() {
                     <Link to="/catalog" className="nav-link">
                     Catalog
                     </Link>
-                    <Link to="/post-details" className="nav-link">
-                    View Post
-                    </Link>
                 </div> 
                 <div className='nav-btn'>
                     <Link to="/login-register" className='nav-btn-link'>Login/Register</Link>
