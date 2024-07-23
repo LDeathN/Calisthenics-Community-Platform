@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react'
 import './PostDetails.css'
 import { useParams } from 'react-router-dom';
 import postsAPI from "../api/posts-api"
+import commentsApi from '../api/comments-api';
 
 function PostDetails() {
   const [post, setPost] = useState({});
   const { postId } = useParams();
+  const [username, setUsername] = useState('');
+  const [comment, setComment] = useState('');
 
   useEffect(() => {
     (async () => {
@@ -15,10 +18,27 @@ function PostDetails() {
     })();
   }, []);
 
+  
+  const commentSubmitHandler = async (e) => {
+    e.preventDefault();
+
+    const newComment = await commentsApi.create(postId, username, comment);
+    
+    setPost(prevState => ({
+        ...prevState,
+        comments: {
+            ...prevState.comments,
+            [newComment._id]: newComment,
+        }
+    }));
+
+    setUsername('');
+    setComment('');
+  }
+
   return (
     <div className='wrapper-post-details'>
         <div className='form-box-post-details'>
-            <form action="">
                 <h1>Post Details</h1>
                 <div className='post-details-box'>
                     <img className='post-details-img' src={post.img} />
@@ -35,12 +55,46 @@ function PostDetails() {
                     <p>Summary: {post.summary}</p>
                 </div>
 
+                <div className='comments-details'>
+                    <h3>Comments</h3>
+                    <ul>
+                        {Object.keys(post.commenst || {}).length > 0
+                        ? Object.values(post.comments).map(comment => (
+                            <li key={comment._id} className='comment'>
+                                <p>{comment.username}: {comment.text}</p>
+                            </li>
+                        ))
+                        : <p className='no-comments'>No comments</p>
+                        }       
+                    </ul>
+                    
+                </div>
+
+                <h1>Add new comment:</h1>
+                
+                <form className='form' onSubmit={commentSubmitHandler}>       
+                    <div className='comment-box'>
+                        <input
+                        type='text'
+                        placeholder='Pesho'
+                        name='username'
+                        onChange={(e) => setUsername(e.target.value)}
+                        value={username}
+                        />
+                        <textarea 
+                        name='comment' 
+                        placeholder='Comment......' 
+                        onChange={(e) => setComment(e.target.value)}
+                        value={comment}
+                        />
+                        <input className='btn submit' type='submit' value="Add Comment"/>
+                    </div>
+                </form>
+
                 <div>
                     <button>Edit</button>
                     <button>Delete</button>
                 </div>
-                
-            </form>
         </div>
     </div>
   )
