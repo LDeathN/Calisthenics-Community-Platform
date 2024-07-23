@@ -58,7 +58,7 @@ function PostDetails() {
                 <div className='comments-details'>
                     <h3>Comments</h3>
                     <ul>
-                        {Object.keys(post.commenst || {}).length > 0
+                        {Object.keys(post.comments || {}).length > 0
                         ? Object.values(post.comments).map(comment => (
                             <li key={comment._id} className='comment'>
                                 <p>{comment.username}: {comment.text}</p>
