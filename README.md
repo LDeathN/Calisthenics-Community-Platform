@@ -50,7 +50,7 @@
 - [] Logout
 - [] Authorized Requests
 ## 8. UI Implementation
-- [] Dynamic Navigation
+- [x] Dynamic Navigation
 - [] Create game
   - [] API function
   - [] Hook

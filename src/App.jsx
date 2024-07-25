@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Catalog from './pages/Catalog';
 import Footer from './components/Footer';
 import LoginRegister from './pages/LoginRegister';
+import Logout from './pages/Logout';
 import ProfileDetails from './pages/ProfileDetails';
 import PostCreate from './pages/PostCreate';
 import PostDetails from './pages/PostDetails';
@@ -37,6 +38,7 @@ function App() {
             <Route path='/' exact Component={Home} />
             <Route path='/catalog' Component={Catalog} />
             <Route className='login-register-section' path='/login-register' Component={LoginRegister} />
+            <Route path='/logout' Component={Logout} />
             <Route path='/profile-details' Component={ProfileDetails} />
             <Route path='/post-create' Component={PostCreate} />
             <Route path='/posts/:postId/details' Component={PostDetails} />
