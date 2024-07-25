@@ -28,3 +28,10 @@ export function useGetOnePosts(postId) {
         setPost,
     ];
 }
+
+export function useCreatePost() {
+    const postCreateHandler = (postData) => postsAPI.create(postData)
+
+    return postCreateHandler;
+}
+
