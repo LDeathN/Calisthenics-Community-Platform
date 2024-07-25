@@ -11,3 +11,20 @@ export function useGetAllPosts() {
 
     return [posts, setPosts];
 }
+
+export function useGetOnePosts(postId) {
+    const [post, setPost] = useState({});
+
+    useEffect(() => {
+        (async () => {
+            const result = await postsAPI.getOne(postId);
+    
+            setPost(result);
+        })();
+      }, [postId]);
+      
+    return [
+        post,
+        setPost,
+    ];
+}

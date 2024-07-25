@@ -31,10 +31,11 @@
 - [x] Clear form
 ## 6. API Hooks
 - [x] Form Hook
-- [] PostAPI Hooks
+- [x] PostAPI Hooks
 - [] Comment Hooks
 ## 7. Authentication
 - [] Auth API
+  - [x] Login
 - [] Auth API hook
 - [] Auth state & context
 - [] Login
@@ -45,3 +46,4 @@
 - [] Create game
   - [] API function
   - [] Hook
+- [] Latest Posts

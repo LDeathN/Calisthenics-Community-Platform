@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import './LoginRegister.css';
 import { FaUser, FaLock, FaEnvelope} from 'react-icons/fa';
+import { useForm } from '../hooks/useForm';
+import { useLogin } from '../hooks/useAuth';
 
 function LoginRegister() {
     const [action, setAction] = useState('');
@@ -13,17 +16,44 @@ function LoginRegister() {
         setAction('');
     }
 
+
+    const login = useLogin();
+    const navigate = useNavigate();
+    const {values, changeHandler, submitHandler} = useForm(
+        {email: '', password: ''},
+        async ({email, password}) => {
+            try {
+                await login(email, password)
+                navigate('/');
+            } catch (err) {
+                console.log(err.message);
+            } 
+        }
+    );
+
   return (
     <div className={`wrapper${action}`}>
         <div className='form-box login'>
-            <form action="">
+            <form onSubmit={submitHandler}>
                 <h1>Login</h1>
                 <div className='input-box'>
-                    <input type="email" placeholder='Email' required />
+                    <input 
+                    type="email" 
+                    placeholder='Email' 
+                    required 
+                    value={values.email}
+                    onChange={changeHandler}
+                    />
                     <FaEnvelope className='icon' />
                 </div>
                 <div className='input-box'>
-                    <input type='password' placeholder='Password' required />
+                    <input 
+                    type='password' 
+                    placeholder='Password' 
+                    required 
+                    value={values.password}
+                    onChange={changeHandler}
+                    />
                     <FaLock className='icon' />
                 </div>
 

@@ -1,23 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './PostDetails.css'
 import { useParams } from 'react-router-dom';
-import postsAPI from "../api/posts-api"
 import commentsApi from '../api/comments-api';
+import { useGetOnePosts } from '../hooks/usePosts';
 
 function PostDetails() {
-  const [post, setPost] = useState({});
   const { postId } = useParams();
   const [username, setUsername] = useState('');
   const [comment, setComment] = useState('');
-
-  useEffect(() => {
-    (async () => {
-        const result = await postsAPI.getOne(postId);
-
-        setPost(result);
-    })();
-  }, []);
-
+  const [post, setPost] = useGetOnePosts(postId);
   
   const commentSubmitHandler = async (e) => {
     e.preventDefault();
