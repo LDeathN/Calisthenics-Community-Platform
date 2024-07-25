@@ -29,3 +29,19 @@
 - [x] Read comments from server
 - [x] Add comments in the component
 - [x] Clear form
+## 6. API Hooks
+- [] Form Hook
+- [] PostAPI Hooks
+- [] Comment Hooks
+## 7. Authentication
+- [] Auth API
+- [] Auth API hook
+- [] Auth state & context
+- [] Login
+- [] Register
+- [] Logout
+## 8. UI Implementation
+- [] Dynamic Navigation
+- [] Create game
+  - [] API function
+  - [] Hook
