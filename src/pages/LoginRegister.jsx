@@ -17,19 +17,24 @@ function LoginRegister() {
     }
 
 
+    const initialValues = {email: '', password: ''};
     const login = useLogin();
     const navigate = useNavigate();
+
+    const loginHandler = async ({email, password}) => {
+        try {
+            await login(email, password)
+            navigate('/');
+        } catch (err) {
+            console.log(err.message);
+        } 
+    }
+
     const {values, changeHandler, submitHandler} = useForm(
-        {email: '', password: ''},
-        async ({email, password}) => {
-            try {
-                await login(email, password)
-                navigate('/');
-            } catch (err) {
-                console.log(err.message);
-            } 
-        }
+        initialValues,
+        loginHandler,
     );
+    
 
   return (
     <div className={`wrapper${action}`}>

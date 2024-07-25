@@ -34,13 +34,20 @@
 - [x] PostAPI Hooks
 - [] Comment Hooks
 ## 7. Authentication
-- [] Auth API
+- [x] Auth API
   - [x] Login
-- [] Auth API hook
-- [] Auth state & context
-- [] Login
+  - [] Register
+  - [] Logout
+- [x] Auth API hook
+  - [x] Login
+  - [] Register
+  - [] Logout
+- [x] Auth state & context
+- [x] Token management
+- [x] Login
 - [] Register
 - [] Logout
+- [] Authorized Requests
 ## 8. UI Implementation
 - [] Dynamic Navigation
 - [] Create game

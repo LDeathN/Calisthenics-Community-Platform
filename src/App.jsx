@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -9,25 +10,41 @@ import LoginRegister from './pages/LoginRegister';
 import ProfileDetails from './pages/ProfileDetails';
 import PostCreate from './pages/PostCreate';
 import PostDetails from './pages/PostDetails';
+import { AuthContext } from './contexts/AuthContext';
 
 function App() {
-  return (
-    <Router>
-      <Navbar />
+  const [authState, setAuthState] = useState({});
 
-      <div className='main-section'>
-        <Routes>
-          <Route path='/' exact Component={Home} />
-          <Route path='/catalog' Component={Catalog} />
-          <Route className='login-register-section' path='/login-register' Component={LoginRegister} />
-          <Route path='/profile-details' Component={ProfileDetails} />
-          <Route path='/post-create' Component={PostCreate} />
-          <Route path='/posts/:postId/details' Component={PostDetails} />
-        </Routes>
-      </div> 
-      
-      <Footer />
-    </Router> 
+  const changeAuthState = (state) => {
+    setAuthState(state);
+  };
+
+  const constextData = {
+    email: authState.email,
+    accessToken: authState.accessToken,
+    isAuthenticated: !!authState.email,
+    changeAuthState,
+  };
+
+  return (
+    <AuthContext.Provider value={constextData}>
+      <Router>
+        <Navbar />
+
+        <div className='main-section'>
+          <Routes>
+            <Route path='/' exact Component={Home} />
+            <Route path='/catalog' Component={Catalog} />
+            <Route className='login-register-section' path='/login-register' Component={LoginRegister} />
+            <Route path='/profile-details' Component={ProfileDetails} />
+            <Route path='/post-create' Component={PostCreate} />
+            <Route path='/posts/:postId/details' Component={PostDetails} />
+          </Routes>
+        </div> 
+        
+        <Footer />
+      </Router> 
+    </AuthContext.Provider>
         
   );
 }
