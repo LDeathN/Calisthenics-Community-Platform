@@ -1,40 +1,53 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './LoginRegister.css';
-import { FaUser, FaLock, FaEnvelope} from 'react-icons/fa';
+import { FaLock, FaEnvelope} from 'react-icons/fa';
 import { useForm } from '../hooks/useForm';
-import { useLogin } from '../hooks/useAuth';
+import { useLogin, useRegister } from '../hooks/useAuth';
 
 function LoginRegister() {
     const [action, setAction] = useState('');
 
     const registerLink = () => {
+        setError('');
         setAction(' active');
     }
 
-    const loginrLink = () => {
+    const loginLink = () => {
+        setError('');
         setAction('');
     }
 
-
-    const initialValues = {email: '', password: ''};
-    const login = useLogin();
+    
+    const [error, setError] = useState('');
+    const initialValues = { email: '', password: '', 'confirm-password': '' };
     const navigate = useNavigate();
 
-    const loginHandler = async ({email, password}) => {
+
+    const login = useLogin();
+    const register = useRegister();
+    
+    const formHandler = async (values) => {
         try {
-            await login(email, password)
+            if (action !== ' active') {
+                await login(values.email, values.password)
+            } else {
+                if (values.password !== values['confirm-password']) {
+                    return setError('Password missmatch!');
+                }
+                await register(values.email, values.password)
+            }
             navigate('/');
         } catch (err) {
-            console.log(err.message);
+            setError(err.message);
         } 
-    }
+    };
 
-    const {values, changeHandler, submitHandler} = useForm(
-        initialValues,
-        loginHandler,
-    );
-    
+const {values, changeHangler, submitHandler} = useForm(
+    initialValues,
+    formHandler,
+);
+
 
   return (
     <div className={`wrapper${action}`}>
@@ -44,20 +57,20 @@ function LoginRegister() {
                 <div className='input-box'>
                     <input 
                     type="email" 
+                    name='email'
                     placeholder='Email' 
-                    required 
                     value={values.email}
-                    onChange={changeHandler}
+                    onChange={changeHangler}
                     />
                     <FaEnvelope className='icon' />
                 </div>
                 <div className='input-box'>
                     <input 
                     type='password' 
+                    name='password'
                     placeholder='Password' 
-                    required 
                     value={values.password}
-                    onChange={changeHandler}
+                    onChange={changeHangler}
                     />
                     <FaLock className='icon' />
                 </div>
@@ -67,6 +80,10 @@ function LoginRegister() {
                     <a href="#">Forgor password?</a>
                 </div>
 
+                {error && (
+                    <p>{error}</p>
+                )}
+                
                 <button type="submit">Login</button>
 
                 <div className="register-link">
@@ -76,29 +93,51 @@ function LoginRegister() {
         </div>
 
         <div className='form-box register'>
-            <form action="">
+            <form onSubmit={submitHandler}>
                 <h1>Register</h1>
                 <div className='input-box'>
-                    <input type="text" placeholder='Username' required />
-                    <FaUser className='icon' />
-                </div>
-                <div className='input-box'>
-                    <input type="email" placeholder='Email' required />
+                    <input 
+                    type="email" 
+                    name='email'
+                    placeholder='Email' 
+                    value={values.email}
+                    onChange={changeHangler}
+                    />
                     <FaEnvelope className='icon' />
                 </div>
                 <div className='input-box'>
-                    <input type='password' placeholder='Password' required />
+                    <input 
+                    type='password' 
+                    name='password'
+                    placeholder='Password' 
+                    value={values.password}
+                    onChange={changeHangler}
+                    />
+                    <FaLock className='icon' />
+                </div>
+                <div className='input-box'>
+                    <input 
+                    type='password' 
+                    name='confirm-password'
+                    placeholder='Confirm Password' 
+                    value={values['confirm-password']}
+                    onChange={changeHangler}
+                    />
                     <FaLock className='icon' />
                 </div>
 
                 <div className='remember-forgot'>
-                    <label><input type='checkbox'/>I agree to the terms & conditions</label>
+                    <label><input type='checkbox' required/>I agree to the terms & conditions</label>
                 </div>
+
+                {error && (
+                    <p>{error}</p>
+                )}
 
                 <button type="submit">Register</button>
 
                 <div className="register-link">
-                    <p>Already have an account? <a href="#" onClick={loginrLink}>Login</a></p>              
+                    <p>Already have an account? <a href="#" onClick={loginLink}>Login</a></p>              
                 </div>
             </form>
         </div>

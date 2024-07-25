@@ -20,6 +20,7 @@ function App() {
   };
 
   const constextData = {
+    userId: authState._id,
     email: authState.email,
     accessToken: authState.accessToken,
     isAuthenticated: !!authState.email,
