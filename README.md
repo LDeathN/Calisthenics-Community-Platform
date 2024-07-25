@@ -48,10 +48,10 @@
 - [x] Register
   - [x] Add form validation
 - [] Logout
-- [] Authorized Requests
+- [x] Authorized Requests
 ## 8. UI Implementation
 - [x] Dynamic Navigation
-- [] Create game
-  - [] API function
-  - [] Hook
+- [x] Create game
+  - [x] API function
+  - [x] Hook
 - [] Latest Posts
