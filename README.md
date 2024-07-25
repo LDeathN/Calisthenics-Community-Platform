@@ -30,7 +30,7 @@
 - [x] Add comments in the component
 - [x] Clear form
 ## 6. API Hooks
-- [] Form Hook
+- [x] Form Hook
 - [] PostAPI Hooks
 - [] Comment Hooks
 ## 7. Authentication

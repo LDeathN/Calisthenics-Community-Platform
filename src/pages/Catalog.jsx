@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import { useGetAllPosts } from '../hooks/usePosts';
 import './Catalog.css';
-import * as postsAPI from '../api/posts-api';
 import CatalogListItem from './CatalogListItem';
 
 function Catalog() {
-  const [posts, setPosts] = useState([]);
-  
-  useEffect(() => {
-    postsAPI.getAll()
-      .then(result => setPosts(result));
-  }, []);
+  const [posts] = useGetAllPosts();
 
   return (
     <section id='catalog-page'>
