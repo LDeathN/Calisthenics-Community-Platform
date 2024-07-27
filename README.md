@@ -55,3 +55,5 @@
   - [x] API function
   - [x] Hook
 - [] Latest Posts
+## 9. Refactoring
+- [] Extract auth state from App component

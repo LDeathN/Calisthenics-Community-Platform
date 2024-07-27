@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -11,28 +10,12 @@ import Logout from './pages/Logout';
 import ProfileDetails from './pages/ProfileDetails';
 import PostCreate from './pages/PostCreate';
 import PostDetails from './pages/PostDetails';
-import { AuthContext } from './contexts/AuthContext';
+import { AuthContextProvider } from './contexts/AuthContext';
 
 function App() {
-  const [authState, setAuthState] = useState({});
-
-  const changeAuthState = (state) => {
-    // TODO: Fix this
-    localStorage.setItem('accessToken', state.accessToken);
-
-    setAuthState(state);
-  };
-
-  const constextData = {
-    userId: authState._id,
-    email: authState.email,
-    accessToken: authState.accessToken,
-    isAuthenticated: !!authState.email,
-    changeAuthState,
-  };
 
   return (
-    <AuthContext.Provider value={constextData}>
+    <AuthContextProvider>
       <Router>
         <Navbar />
 
@@ -50,7 +33,7 @@ function App() {
         
         <Footer />
       </Router> 
-    </AuthContext.Provider>
+    </AuthContextProvider>
         
   );
 }
