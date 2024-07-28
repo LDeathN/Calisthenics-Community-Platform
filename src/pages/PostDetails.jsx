@@ -14,7 +14,7 @@ function PostDetails() {
   const { postId } = useParams();
   const [comments, dispatch] = useGetAllComments(postId);
   const createComment = useCreateComment();
-  const { email } = useAuthContext();
+  const { email, userId } = useAuthContext();
   const [post] = useGetOnePosts(postId);
   const { isAuthenticated } = useAuthContext();
   const {
@@ -33,6 +33,7 @@ function PostDetails() {
     
   });
   
+  const isOwner = userId === post._ownerId;
 
   return (
     <div className='wrapper-post-details'>
@@ -81,12 +82,13 @@ function PostDetails() {
                             <input className='btn submit' type='submit' value="Add Comment"/>
                         </div>
                     </form>
-
+                </div>
+                )}
+                {isOwner && (
                     <div>
                         <button>Edit</button>
                         <button>Delete</button>
                     </div>
-                </div>
                 )}
         </div>
     </div>

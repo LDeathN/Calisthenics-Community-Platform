@@ -55,7 +55,11 @@
   - [x] API function
   - [x] Hook
 - [] Latest Posts
+- [] Edit Post
+- [] Delete Post
 ## 9. Refactoring
 - [x] Extract auth state from App component
 - [x] Persist auth state
 - [x] Comments
+- [x] Refactored comments with useReducer
+- [x] Edit and Delete ownership rendering
