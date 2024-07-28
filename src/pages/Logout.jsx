@@ -1,5 +1,4 @@
 import React from 'react';
-import './Logout.css';
 import {Navigate} from 'react-router-dom'
 import { useLogout } from '../hooks/useAuth';
 

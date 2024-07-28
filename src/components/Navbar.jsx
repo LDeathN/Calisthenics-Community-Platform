@@ -1,11 +1,14 @@
-import React, { useContext } from 'react';
 import './Navbar.css';
 import logo from '../images/logo.svg';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../contexts/AuthContext';
+import { useAuthContext } from '../contexts/AuthContext';
+import withAuth from '../HOC/withAuth';
 
-function Navbar() {
-    const { isAuthenticated } = useContext(AuthContext);
+function Navbar({
+    auth,
+}) {
+    const { isAuthenticated } = auth;
+    //onst { isAuthenticated } = useAuthContext();
 
   return (
     <>
@@ -46,4 +49,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
+export default withAuth(Navbar);

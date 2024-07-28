@@ -1,19 +1,20 @@
 import requester, { post } from "./requester"
 
-const BASE_URL = 'http://localhost:3030/jsonstore/posts';
+const BASE_URL = 'http://localhost:3030/data/comments';
 
-const buildUrl = (postId) => `${BASE_URL}/${postId}/comments`;
+const create = (postId, text) => requester.post(BASE_URL, {username, text});
 
-const create = async (postId, username, text) => requester.post(buildUrl(postId), {username, text});
+const getAll = (postId) => {
+    const params = new URLSearchParams({
+        where: `postId="${postId}"`
+    });
 
-const getAll = async (postId) => {
-    const result = await requester.get(buildUrl(postId));
-    const comments = Object.values(result);
-
-    return comments;
+    return requester.get(`${BASE_URL}?${params.toString()}`);
 }
 
-export default {
+const commentsAPI = {
     create,
     getAll,
 }
+
+export default commentsAPI;

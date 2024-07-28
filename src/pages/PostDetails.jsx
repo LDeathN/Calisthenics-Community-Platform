@@ -1,31 +1,29 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './PostDetails.css'
 import { useParams } from 'react-router-dom';
-import commentsApi from '../api/comments-api';
 import { useGetOnePosts } from '../hooks/usePosts';
+import {useForm} from '../hooks/useForm';
+import { useAuthContext } from '../contexts/AuthContext';
+import { useGetAllComments, useCreateComment } from '../hooks/useComments';
+
+const initalValues = {
+    comment: '',
+};
 
 function PostDetails() {
   const { postId } = useParams();
-  const [username, setUsername] = useState('');
-  const [comment, setComment] = useState('');
-  const [post, setPost] = useGetOnePosts(postId);
+  const [comments, setComments] = useGetAllComments(postId);
+  const createComment = useCreateComment();
+  const [post] = useGetOnePosts(postId);
+  const { isAuthenticated } = useAuthContext();
+  const {
+    changeHangler,
+    submitHandler,
+    values,
+  } = useForm(initalValues, ({ comment }) => {
+    createComment(postId, comment);
+  });
   
-  const commentSubmitHandler = async (e) => {
-    e.preventDefault();
-
-    const newComment = await commentsApi.create(postId, username, comment);
-    
-    setPost(prevState => ({
-        ...prevState,
-        comments: {
-            ...prevState.comments,
-            [newComment._id]: newComment,
-        }
-    }));
-
-    setUsername('');
-    setComment('');
-  }
 
   return (
     <div className='wrapper-post-details'>
@@ -49,43 +47,38 @@ function PostDetails() {
                 <div className='comments-details'>
                     <h3>Comments</h3>
                     <ul>
-                        {Object.keys(post.comments || {}).length > 0
-                        ? Object.values(post.comments).map(comment => (
+                        {comments.map(comment => (
                             <li key={comment._id} className='comment'>
-                                <p>{comment.username}: {comment.text}</p>
+                                <p>Username: {comment.text}</p>
                             </li>
-                        ))
-                        : <p className='no-comments'>No comments</p>
+                            ))
                         }       
                     </ul>
-                    
+                    {comments.length === 0 && <p className='no-comments'>No comments</p>}        
                 </div>
 
-                <h1>Add new comment:</h1>
-                
-                <form className='form' onSubmit={commentSubmitHandler}>       
-                    <div className='comment-box'>
-                        <input
-                        type='text'
-                        placeholder='Pesho'
-                        name='username'
-                        onChange={(e) => setUsername(e.target.value)}
-                        value={username}
-                        />
-                        <textarea 
-                        name='comment' 
-                        placeholder='Comment......' 
-                        onChange={(e) => setComment(e.target.value)}
-                        value={comment}
-                        />
-                        <input className='btn submit' type='submit' value="Add Comment"/>
-                    </div>
-                </form>
-
+                {isAuthenticated && (
                 <div>
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    <h1>Add new comment:</h1>
+                    
+                    <form className='form' onSubmit={submitHandler}>       
+                        <div className='comment-box'>
+                            <textarea 
+                            name='comment' 
+                            placeholder='Comment......' 
+                            onChange={changeHangler}
+                            value={values.comment}
+                            />
+                            <input className='btn submit' type='submit' value="Add Comment"/>
+                        </div>
+                    </form>
+
+                    <div>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </div>
                 </div>
+                )}
         </div>
     </div>
   )
