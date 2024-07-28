@@ -2,7 +2,7 @@ import requester, { post } from "./requester"
 
 const BASE_URL = 'http://localhost:3030/data/comments';
 
-const create = (postId, text) => requester.post(BASE_URL, {username, text});
+const create = (postId, text) => requester.post(BASE_URL, {postId, text});
 
 const getAll = (postId) => {
     const params = new URLSearchParams({

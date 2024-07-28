@@ -20,8 +20,15 @@ function PostDetails() {
     changeHangler,
     submitHandler,
     values,
-  } = useForm(initalValues, ({ comment }) => {
-    createComment(postId, comment);
+  } = useForm(initalValues, async ({ comment }) => {
+    try {
+        const newComment = await createComment(postId, comment);
+        
+        setComments(oldComments => [...oldComments, newComment]);
+    } catch(err) {
+        console.log(err.message);
+    }
+    
   });
   
 

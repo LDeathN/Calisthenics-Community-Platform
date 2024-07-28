@@ -1,7 +1,6 @@
 import './Navbar.css';
 import logo from '../images/logo.svg';
 import { Link } from 'react-router-dom';
-import { useAuthContext } from '../contexts/AuthContext';
 import withAuth from '../HOC/withAuth';
 
 function Navbar({
