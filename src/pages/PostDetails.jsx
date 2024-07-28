@@ -12,8 +12,9 @@ const initalValues = {
 
 function PostDetails() {
   const { postId } = useParams();
-  const [comments, setComments] = useGetAllComments(postId);
+  const [comments, dispatch] = useGetAllComments(postId);
   const createComment = useCreateComment();
+  const { email } = useAuthContext();
   const [post] = useGetOnePosts(postId);
   const { isAuthenticated } = useAuthContext();
   const {
@@ -24,7 +25,8 @@ function PostDetails() {
     try {
         const newComment = await createComment(postId, comment);
         
-        setComments(oldComments => [...oldComments, newComment]);
+        //setComments(oldComments => [...oldComments, newComment]);
+        dispatch({type: 'ADD_COMMENT', payload: {...newComment, author: { email } } })
     } catch(err) {
         console.log(err.message);
     }
