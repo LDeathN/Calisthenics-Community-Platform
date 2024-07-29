@@ -43,20 +43,19 @@ function PostDetails() {
                     <img className='post-details-img' src={post.imgUrl} />
                     <div>
                         <div className='input-box'>
-                            <h3>{post.title}</h3>
+                            <h3 className='post-title'>{post.title}</h3>
                         </div>
                         <div className='input-box'>
-                            <p>Category: {post.category}</p>
+                            <p className='post-category'>Category: {post.category}</p>
+                        </div>
+                        <div className='input-box summary'>
+                            <p className='post-summary'>Summary: {post.summary}</p>
                         </div>
                     </div>
                 </div>
-                <div className='input-box summary'>
-                    <p>Summary: {post.summary}</p>
-                </div>
-
                 <div className='comments-details'>
                     <h3>Comments</h3>
-                    <ul>
+                    <ul className='comments-list'>
                         {comments.map(comment => (
                             <li key={comment._id} className='comment'>
                                 <p>{comment.author.email}: {comment.text}</p>
@@ -68,8 +67,8 @@ function PostDetails() {
                 </div>
 
                 {isAuthenticated && (
-                <div>
-                    <h1>Add new comment:</h1>
+                <div className='add-comment-section'>
+                    <h1>Add new comment</h1>
                     
                     <form className='form' onSubmit={submitHandler}>       
                         <div className='comment-box'>
@@ -79,15 +78,15 @@ function PostDetails() {
                             onChange={changeHangler}
                             value={values.comment}
                             />
-                            <input className='btn submit' type='submit' value="Add Comment"/>
+                            <input className='btn-submit' type='submit' value="Add Comment"/>
                         </div>
                     </form>
                 </div>
                 )}
                 {isOwner && (
-                    <div>
-                        <button>Edit</button>
-                        <button>Delete</button>
+                    <div className='post-details-buttons'>
+                        <button className='post-details-edit'>Edit</button>
+                        <button className='post-details-delete'>Delete</button>
                     </div>
                 )}
         </div>

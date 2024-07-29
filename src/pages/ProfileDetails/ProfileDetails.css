@@ -3,7 +3,7 @@
 .wrapper-profile {
     position: relative;
     width: 500px;
-    height: 650px;
+    height: auto;
     background-color: transparent;
     border: 2px solid rgba(255, 255, 255, .1);
     backdrop-filter: blur(30px);
