@@ -67,6 +67,6 @@
 - [x] Home Page
 - [x] Catalog Page
 - [] Profile Page
-- [] Post Details
+- [x] Post Details
 - [] Footer
 
