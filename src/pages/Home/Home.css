@@ -1,4 +1,4 @@
-@import '../App.css';
+@import url('../../App.css');
 
 .hero {
     padding: 0.5rem calc((100vw - 1200px) / 2);

@@ -1,5 +1,5 @@
 import './Navbar.css';
-import logo from '../images/logo.svg';
+import logo from '../../images/logo.svg';
 import { Link } from 'react-router-dom';
 import withAuth from '../../HOC/withAuth';
 

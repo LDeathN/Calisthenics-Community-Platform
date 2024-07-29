@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Catalog from './pages/Catalog';
-import Footer from './components/Footer';
-import LoginRegister from './pages/LoginRegister';
-import Logout from './pages/Logout';
-import ProfileDetails from './pages/ProfileDetails';
-import PostCreate from './pages/PostCreate';
-import PostDetails from './pages/PostDetails';
+import Navbar from './components/Navbar/Navbar';
+import Home from './pages/Home/Home';
+import Catalog from './pages/Catalog/Catalog';
+import Footer from './components/Footer/Footer';
+import LoginRegister from './pages/LoginRegisterLogout/LoginRegister';
+import Logout from './pages/LoginRegisterLogout/Logout';
+import ProfileDetails from './pages/ProfileDetails/ProfileDetails';
+import PostCreate from './pages/PostCreate/PostCreate';
+import PostDetails from './pages/PostDetails/PostDetails';
 import { AuthContextProvider } from './contexts/AuthContext';
 
 function App() {

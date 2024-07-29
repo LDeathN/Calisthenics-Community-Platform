@@ -1,4 +1,4 @@
-@import url('../App.css');
+@import url('../../App.css');
 
 .footer {
     padding: 5rem calc((100vw - 1100px) / 2);
