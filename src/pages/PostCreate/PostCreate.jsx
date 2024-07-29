@@ -1,7 +1,7 @@
 import React from 'react'
 import './PostCreate.css'
-import { useForm } from '../hooks/useForm';
-import { useCreatePost } from '../hooks/usePosts';
+import { useForm } from '../../hooks/useForm';
+import { useCreatePost } from '../../hooks/usePosts';
 import { useNavigate } from 'react-router-dom';
 
 const initialValues = {

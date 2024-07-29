@@ -1,10 +1,10 @@
 import React from 'react'
 import './PostDetails.css'
 import { useParams } from 'react-router-dom';
-import { useGetOnePosts } from '../hooks/usePosts';
-import {useForm} from '../hooks/useForm';
-import { useAuthContext } from '../contexts/AuthContext';
-import { useGetAllComments, useCreateComment } from '../hooks/useComments';
+import { useGetOnePosts } from '../../hooks/usePosts';
+import {useForm} from '../../hooks/useForm';
+import { useAuthContext } from '../../contexts/AuthContext';
+import { useGetAllComments, useCreateComment } from '../../hooks/useComments';
 
 const initalValues = {
     comment: '',

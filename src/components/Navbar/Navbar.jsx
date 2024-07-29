@@ -1,7 +1,7 @@
 import './Navbar.css';
 import logo from '../images/logo.svg';
 import { Link } from 'react-router-dom';
-import withAuth from '../HOC/withAuth';
+import withAuth from '../../HOC/withAuth';
 
 function Navbar({
     auth,

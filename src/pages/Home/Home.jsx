@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './Home.css';
-import postsAPI from "../api/posts-api";
+import postsAPI from "../../api/posts-api";
 import LatestPost from './LatestPost';
 
 export default function Home() {

@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './LoginRegister.css';
 import { FaLock, FaEnvelope} from 'react-icons/fa';
-import { useForm } from '../hooks/useForm';
-import { useLogin, useRegister } from '../hooks/useAuth';
+import { useForm } from '../../hooks/useForm';
+import { useLogin, useRegister } from '../../hooks/useAuth';
 
 function LoginRegister() {
     const [action, setAction] = useState('');

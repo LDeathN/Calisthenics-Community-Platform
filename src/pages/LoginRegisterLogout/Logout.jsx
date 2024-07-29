@@ -1,6 +1,6 @@
 import React from 'react';
 import {Navigate} from 'react-router-dom'
-import { useLogout } from '../hooks/useAuth';
+import { useLogout } from '../../hooks/useAuth';
 
 
 function Logout() {
