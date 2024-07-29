@@ -19,11 +19,12 @@ export default function Home() {
       <div className="hero-content">
         <h1>Welcome to the World </h1>
         <h1> of Calisthenics</h1>
-
-        {latestPosts.length > 0
-          ? latestPosts.map(post => <LatestPost key={post._id} {...post}/>)
-          : <p>No posts yet</p>
-        }
+        <div className="allPosts">
+          {latestPosts.length > 0
+            ? latestPosts.map(post => <LatestPost key={post._id} {...post}/>)
+            : <p className='no-posts'>No posts yet</p>
+          }
+        </div>
       </div>
     </div>
   );

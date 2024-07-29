@@ -40,7 +40,7 @@ function PostDetails() {
         <div className='form-box-post-details'>
                 <h1>Post Details</h1>
                 <div className='post-details-box'>
-                    <img className='post-details-img' src={post.img} />
+                    <img className='post-details-img' src={post.imgUrl} />
                     <div>
                         <div className='input-box'>
                             <h3>{post.title}</h3>

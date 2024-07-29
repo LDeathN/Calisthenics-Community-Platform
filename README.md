@@ -63,3 +63,10 @@
 - [x] Comments
 - [x] Refactored comments with useReducer
 - [x] Edit and Delete ownership rendering
+## 10. Styling pages
+- [x] Home Page
+- [] Catalog Page
+- [] Profile Page
+- [] Post Details
+- [] Footer
+
