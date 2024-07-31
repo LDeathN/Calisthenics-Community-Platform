@@ -13,7 +13,12 @@ export function useGetAllPosts() {
 }
 
 export function useGetOnePosts(postId) {
-    const [post, setPost] = useState({});
+    const [post, setPost] = useState({
+        title: '',
+        category: '',
+        imgUrl: '',
+        summary: '',
+    });
 
     useEffect(() => {
         (async () => {

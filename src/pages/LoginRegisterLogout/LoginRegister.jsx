@@ -5,6 +5,8 @@ import { FaLock, FaEnvelope} from 'react-icons/fa';
 import { useForm } from '../../hooks/useForm';
 import { useLogin, useRegister } from '../../hooks/useAuth';
 
+const initialValues = { email: '', password: '', 'confirm-password': '' };
+
 function LoginRegister() {
     const [action, setAction] = useState('');
 
@@ -20,7 +22,6 @@ function LoginRegister() {
 
     
     const [error, setError] = useState('');
-    const initialValues = { email: '', password: '', 'confirm-password': '' };
     const navigate = useNavigate();
 
 
