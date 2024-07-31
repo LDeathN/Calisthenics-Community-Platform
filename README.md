@@ -55,8 +55,8 @@
   - [x] API function
   - [x] Hook
 - [] Latest Posts
-- [] Edit Post
-- [] Delete Post
+- [x] Edit Post
+- [x] Delete Post
 ## 9. Refactoring
 - [x] Extract auth state from App component
 - [x] Persist auth state
