@@ -195,15 +195,41 @@
 }
 
 .post-details-edit {
-    width: 100px;
+    width: 100%;
+    height: 45px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
     transition: 0.3s ease-in-out;
     margin-right: 0.5rem;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 0.8rem;
 }
 
 .post-details-delete {
-    width: 100px;
+    width: 100%;
+    height: 45px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
     transition: 0.3s ease-in-out;
     margin-left: 0.5rem;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 0.8rem;
 }
 
 .post-details-delete:hover, .post-details-edit:hover {

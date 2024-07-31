@@ -7,7 +7,7 @@ function Navbar({
     auth,
 }) {
     const { isAuthenticated } = auth;
-    //onst { isAuthenticated } = useAuthContext();
+    //const { isAuthenticated } = useAuthContext();
 
   return (
     <>

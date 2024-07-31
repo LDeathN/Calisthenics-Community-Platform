@@ -10,6 +10,7 @@ import Logout from './pages/LoginRegisterLogout/Logout';
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails';
 import PostCreate from './pages/PostCreate/PostCreate';
 import PostDetails from './pages/PostDetails/PostDetails';
+import PostEdit from './pages/PostEdit/PostEdit';
 import { AuthContextProvider } from './contexts/AuthContext';
 
 function App() {
@@ -21,13 +22,14 @@ function App() {
 
         <div className='main-section'>
           <Routes>
-            <Route path='/' exact Component={Home} />
-            <Route path='/catalog' Component={Catalog} />
-            <Route className='login-register-section' path='/login-register' Component={LoginRegister} />
-            <Route path='/logout' Component={Logout} />
-            <Route path='/profile-details' Component={ProfileDetails} />
-            <Route path='/post-create' Component={PostCreate} />
-            <Route path='/posts/:postId/details' Component={PostDetails} />
+            <Route path='/' element={<Home/>} />
+            <Route path='/catalog' element={<Catalog/>} />
+            <Route className='login-register-section' path='/login-register' element={<LoginRegister/>} />
+            <Route path='/logout' element={<Logout/>} />
+            <Route path='/profile-details' element={<ProfileDetails/>} />
+            <Route path='/post-create' element={<PostCreate/>} />
+            <Route path='/posts/:postId/details' element={<PostDetails/>} />
+            <Route path='/posts/:postId/edit' element={<PostEdit/>} />
           </Routes>
         </div> 
         

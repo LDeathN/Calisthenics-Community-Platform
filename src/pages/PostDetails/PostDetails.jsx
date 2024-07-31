@@ -1,6 +1,6 @@
 import React from 'react'
 import './PostDetails.css'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useGetOnePosts } from '../../hooks/usePosts';
 import {useForm} from '../../hooks/useForm';
 import { useAuthContext } from '../../contexts/AuthContext';
@@ -85,8 +85,8 @@ function PostDetails() {
                 )}
                 {isOwner && (
                     <div className='post-details-buttons'>
-                        <button className='post-details-edit'>Edit</button>
-                        <button className='post-details-delete'>Delete</button>
+                        <Link to={`/posts/${postId}/edit`} className='post-details-edit'>Edit</Link>
+                        <Link className='post-details-delete'>Delete</Link>
                     </div>
                 )}
         </div>
