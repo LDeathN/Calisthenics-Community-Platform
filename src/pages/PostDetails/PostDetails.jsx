@@ -86,7 +86,7 @@ function PostDetails() {
                 {isOwner && (
                     <div className='post-details-buttons'>
                         <Link to={`/posts/${postId}/edit`} className='post-details-edit'>Edit</Link>
-                        <Link className='post-details-delete'>Delete</Link>
+                        <Link to={`/posts/${postId}/delete`}  className='post-details-delete'>Delete</Link>
                     </div>
                 )}
         </div>

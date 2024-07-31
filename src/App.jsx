@@ -12,6 +12,7 @@ import PostCreate from './pages/PostCreate/PostCreate';
 import PostDetails from './pages/PostDetails/PostDetails';
 import PostEdit from './pages/PostEdit/PostEdit';
 import { AuthContextProvider } from './contexts/AuthContext';
+import PostDelete from './pages/PostDelete/PostDelete';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
             <Route path='/post-create' element={<PostCreate/>} />
             <Route path='/posts/:postId/details' element={<PostDetails/>} />
             <Route path='/posts/:postId/edit' element={<PostEdit/>} />
+            <Route path='/posts/:postId/delete' element={<PostDelete/>} />
           </Routes>
         </div> 
         
