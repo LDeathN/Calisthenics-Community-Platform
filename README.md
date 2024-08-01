@@ -63,6 +63,7 @@
 - [x] Comments
 - [x] Refactored comments with useReducer
 - [x] Edit and Delete ownership rendering
+- [x] Add route guards
 ## 10. Styling pages
 - [x] Home Page
 - [x] Catalog Page
