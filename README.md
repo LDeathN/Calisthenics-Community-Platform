@@ -54,7 +54,7 @@
 - [x] Create game
   - [x] API function
   - [x] Hook
-- [] Latest Posts
+- [x] Latest Posts
 - [x] Edit Post
 - [x] Delete Post
 ## 9. Refactoring

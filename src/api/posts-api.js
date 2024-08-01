@@ -10,6 +10,21 @@ export const getAll = async () => {
     return posts;
 }
 
+export const getLatest = async () => {
+    const urlSearchParams = new URLSearchParams({
+        sortBy: '_createdOn desc',
+        pageSize: 3,
+    });
+
+    console.log(urlSearchParams);
+    
+    const result = await request.get(`${BASE_URL}?${urlSearchParams.toString()}`);
+
+    const latestPosts = Object.values(result);
+
+    return latestPosts;
+};
+
 export const getOne = (postId) => request.get(`${BASE_URL}/${postId}`);
 
 export const create = (postData) => request.post(`${BASE_URL}`, postData);
@@ -24,6 +39,7 @@ const postsAPI = {
     create,
     remove,
     update,
+    getLatest,
 };
 
 export default postsAPI;
