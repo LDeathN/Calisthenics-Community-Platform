@@ -1,8 +1,8 @@
 import * as request from './requester';
 
-const BASE_URL = 'http://localhost:3030/data/users';
+const BASE_URL = 'http://localhost:3030/users';
 
-export const getOne = (userId) => request.get(`${BASE_URL}/${userId}`);
+export const getOne = () => request.get(`${BASE_URL}/me`);
 
 const profileAPI = {
     getOne,

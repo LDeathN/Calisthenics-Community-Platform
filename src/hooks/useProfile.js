@@ -6,7 +6,7 @@ export function useGetProfile(userId) {
 
     useEffect(() => {
         (async () => {
-            const result = await profileAPI.getOne(userId);
+            const result = await profileAPI.getOne();
     
             setProfile(result);
         })();
