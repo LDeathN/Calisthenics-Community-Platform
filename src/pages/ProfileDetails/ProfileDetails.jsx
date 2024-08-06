@@ -33,9 +33,6 @@ function ProfileDetails() {
                     <div className='input-box'>
                         Email: {user.email}
                     </div>
-                    <div>
-                        <button>Edit</button>
-                    </div>
                 </form>
             </div>
         </div>

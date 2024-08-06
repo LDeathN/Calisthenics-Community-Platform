@@ -67,7 +67,7 @@
 ## 10. Styling pages
 - [x] Home Page
 - [x] Catalog Page
-- [] Profile Page
+- [x] Profile Page
 - [x] Post Details
 - [x] Footer
 
