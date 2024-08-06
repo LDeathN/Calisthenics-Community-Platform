@@ -22,7 +22,7 @@ export function AuthContextProvider(props) {
         setAuthState(null);
     }
 
-    const constextData = {
+    const contextData = {
         userId: authState?._id,
         email: authState?.email,
         accessToken: authState?.accessToken,
@@ -32,7 +32,7 @@ export function AuthContextProvider(props) {
     };
 
     return (
-        <AuthContext.Provider value={constextData}>
+        <AuthContext.Provider value={contextData}>
             {props.children}
         </AuthContext.Provider>
     );

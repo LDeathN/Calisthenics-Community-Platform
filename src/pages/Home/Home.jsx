@@ -8,9 +8,9 @@ export default function Home() {
 
   useEffect(() => {
     (async () => {
-      const result = await postsAPI.getLatest();
+      const result = await postsAPI.getAll();
 
-      setLatestPosts(result);
+      setLatestPosts(result.reverse().slice(0, 3));
     })();
   }, [])
 

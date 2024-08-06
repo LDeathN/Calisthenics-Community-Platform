@@ -22,26 +22,25 @@ function Navbar({
                     </Link>
                     {isAuthenticated
                         ? (
-                        <div className='nav-menu'>
-                            <Link to="/profile-details" className="nav-link">
-                            Profile
-                            </Link>
-                            <Link to="/post-create" className="nav-link">
-                            Create Post
-                            </Link>
-                            <Link to="/logout" className='nav-link'>
-                            Logout
-                            </Link>
-                        </div>
+                            <div className='nav-menu'>
+                                <Link to="/profile-details" className="nav-link">
+                                Profile
+                                </Link>
+                                <Link to="/post-create" className="nav-link">
+                                Create Post
+                                </Link>
+                                <Link to="/logout" className='nav-link'>
+                                Logout
+                                </Link>
+                            </div>
                         )
                         : (
-                        <div>
-                            <Link to="/login-register" className='nav-link'>Login/Register</Link>
-                        </div>
+                            <div>
+                                <Link to="/login-register" className='nav-link'>Login/Register</Link>
+                            </div>
                         )
                     }       
-                </div> 
-                
+                </div>              
             </div>
         </div>
     </>

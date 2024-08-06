@@ -69,5 +69,5 @@
 - [x] Catalog Page
 - [] Profile Page
 - [x] Post Details
-- [] Footer
+- [x] Footer
 
