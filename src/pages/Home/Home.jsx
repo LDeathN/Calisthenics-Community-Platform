@@ -10,7 +10,7 @@ export default function Home() {
     (async () => {
       const result = await postsAPI.getAll();
 
-      setLatestPosts(result.reverse().slice(0, 3));
+      await setLatestPosts(result.reverse().slice(0, 3));
     })();
   }, [])
 

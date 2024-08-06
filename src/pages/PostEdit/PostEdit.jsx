@@ -64,7 +64,7 @@ function PostEdit() {
                         />
                     </div>
 
-                    <Link to={`/posts/${postId}/details`} type="submit"><button className='post-edit-button'>Edit</button></Link>
+                    <button type='submit' className='post-edit-button'>Edit</button>
                 </form>
             </div>
         </div>

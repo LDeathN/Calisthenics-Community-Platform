@@ -2,6 +2,8 @@ import './Navbar.css';
 import logo from '../../images/logo.svg';
 import { Link } from 'react-router-dom';
 import withAuth from '../../HOC/withAuth';
+import { useAuthContext } from '../../contexts/AuthContext';
+
 
 function Navbar({
     auth,

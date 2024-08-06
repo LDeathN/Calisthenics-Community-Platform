@@ -1,4 +1,4 @@
-import { login, register, logout } from "../api/auth-api"
+import { login, register, logout as serverLogout } from "../api/auth-api"
 import { useAuthContext } from "../contexts/AuthContext";
 
 export const useLogin = () => {
@@ -33,8 +33,14 @@ export const useLogout = () => {
     const { logout: localLogout } = useAuthContext();
 
     const logoutHandler = async () => {
-            await logout(); 
-            localLogout();  
+        try {
+            await serverLogout();
+
+            localLogout();
+            
+        } catch (error) {
+            console.error('Error logging out:', error);
+        } 
         };
 
     return logoutHandler;

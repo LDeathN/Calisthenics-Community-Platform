@@ -7,7 +7,8 @@ function PostDelete() {
     const { postId } = useParams();
     const navigate = useNavigate();
 
-    const postDeleteHandler = async () => {
+    const postDeleteHandler = async (event) => {
+        event.preventDefault();
         try {
             await postsAPI.remove(postId);
             navigate('/');

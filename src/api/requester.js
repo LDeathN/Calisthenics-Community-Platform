@@ -30,6 +30,12 @@ async function requester(method, url, data) {
     if (response.status === 204) {
         return;
     }
+
+    if (response.status === 401 || response.status === 403) {
+        localStorage.removeItem('auth');
+        throw new Error('Authentication failed');
+    }
+    
     const result = await response.json();
 
     if (!response.ok) {
@@ -41,7 +47,7 @@ async function requester(method, url, data) {
 
 export const get = requester.bind(null, 'GET');
 export const post = requester.bind(null, 'POST');
-export const put = requester.bind(null, 'PUI');
+export const put = requester.bind(null, 'PUT');
 export const del = requester.bind(null, 'DELETE');
 
 export default {
