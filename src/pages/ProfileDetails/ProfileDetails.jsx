@@ -6,7 +6,6 @@ import { useAuthContext } from '../../contexts/AuthContext';
 function ProfileDetails() {
     const { userId } = useAuthContext();
     const [user] = useGetProfile(userId);
-    console.log(user);
 
     return (
         <div className='wrapper-profile'>
