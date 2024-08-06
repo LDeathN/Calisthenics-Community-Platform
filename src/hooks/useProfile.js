@@ -6,9 +6,10 @@ export function useGetProfile(userId) {
 
     useEffect(() => {
         (async () => {
-            const result = await profileAPI.getOne();
+            const {password: _, ...userData} = await profileAPI.getOne();
     
-            setProfile(result);
+            setProfile(userData);
+            
         })();
       }, [userId]);
       
